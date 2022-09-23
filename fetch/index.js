@@ -11,3 +11,14 @@ export const getListEps = async () => {
 
   return axiosResponse;
 };
+
+export const getWatch = async (slug) => {
+  const URL = "data";
+
+  const response = await axios.get(
+    `${ROOT_API}/${API_VERSION}/${URL}/?slug=${slug}`
+  );
+  const axiosResponse = response.data;
+
+  return axiosResponse;
+};
