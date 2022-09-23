@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Iframe from "react-iframe";
 import Button from "../../components/Button";
 import Head from "next/head";
+import Link from "next/link";
 
 function Watch() {
   const { query, isReady } = useRouter();
@@ -21,6 +22,7 @@ function Watch() {
   useEffect(() => {
     if (isReady) {
       getData(query.slug);
+      localStorage.setItem("last-watch", query.slug);
     }
   }, [getData, query.slug, isReady]);
 
@@ -34,6 +36,9 @@ function Watch() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Section>
+        <Link href="/">
+          <a className="mb-4 block">Beranda</a>
+        </Link>
         {loading && <h1>Loading....</h1>}
         <div>
           <Iframe
