@@ -1,12 +1,11 @@
+import InfoBottom from "./InfoBottom";
 import InfoTop from "./InfoTop";
 
 function Info() {
   return (
     <div>
-      {/* infoTOp */}
       <InfoTop />
-
-      {/* infoBottom */}
+      <InfoBottom />
     </div>
   );
 }

@@ -11,7 +11,7 @@ function InfoTop() {
         alt=""
       />
       <h1 className="text-gray-700 font-semibold text-lg">One Piece</h1>
-      <p className="line-clamp-4">
+      <p className="line-clamp-4 text-sm">
         One Piece Sub Indo menceritakan petualangan seorang karakter bernama
         Monkey D. Luffy (Luffy) yang berbeda dari para bajak laut lainnya.
         Bukannya memamerkan kekerasan dan kejahatan, atau mengejar nama besar,
