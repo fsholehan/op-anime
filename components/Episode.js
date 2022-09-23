@@ -1,9 +1,9 @@
-function Episode() {
+function Episode({ eps, title, date }) {
   return (
     <div className="flex items-center justify-between">
-      <span>001</span>
-      <span>One Piece</span>
-      <span>Maret, 10 2022</span>
+      <span>{eps}</span>
+      <span className="text-center">{title}</span>
+      <span>{date}</span>
     </div>
   );
 }

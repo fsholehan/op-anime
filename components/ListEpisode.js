@@ -1,11 +1,11 @@
 import Episode from "./Episode";
 
-function ListEpisode() {
+function ListEpisode({ episodes }) {
   return (
     <div className="mt-6 flex flex-col space-y-2">
-      <Episode />
-      <Episode />
-      <Episode />
+      {episodes.map((eps, i) => (
+        <Episode key={i} eps={eps.eps} date={eps.date} title={eps.title} />
+      ))}
     </div>
   );
 }

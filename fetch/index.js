@@ -3,6 +3,8 @@ import axios from "axios";
 const ROOT_API = process.env.NEXT_PUBLIC_API_URL;
 const API_VERSION = "api";
 
+console.log(ROOT_API);
+
 export const getListEps = async () => {
   const URL = "all";
 

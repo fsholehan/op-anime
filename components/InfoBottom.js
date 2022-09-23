@@ -1,11 +1,11 @@
 import React from "react";
 import ListEpisode from "./ListEpisode";
 
-function InfoBottom() {
+function InfoBottom({ listEps }) {
   return (
     <div className="mt-10">
       <h1 className="text-lg text-gray-700 font-semibold">Daftar Episode</h1>
-      <ListEpisode />
+      <ListEpisode episodes={listEps} />
     </div>
   );
 }
