@@ -1,9 +1,13 @@
-function Episode({ eps, title, date }) {
+function Episode({ eps, date }) {
   return (
-    <div className="flex items-center justify-between">
-      <span>{eps}</span>
-      <span className="text-center">{title}</span>
-      <span>{date}</span>
+    <div className="flex items-end justify-between cursor-pointer">
+      <div className="flex flex-col space-y-1">
+        <h4 className="text-gray-700 font-bold">{eps}</h4>
+        <span className="text-xs">{date}</span>
+      </div>
+      <h1 className="font-semibold text-gray-600 text-sm">
+        One Piece Episode {eps}
+      </h1>
     </div>
   );
 }

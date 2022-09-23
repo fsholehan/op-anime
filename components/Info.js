@@ -18,10 +18,9 @@ function Info() {
     getResult();
   }, [getResult]);
 
-  console.log(result);
-
   return (
     <div>
+      {loading && <h1>Loading.....</h1>}
       <InfoTop
         title={result.title}
         desc={result.description}
