@@ -43,6 +43,7 @@ function Watch() {
             className="w-full"
             display="initial"
             position="relative"
+            allowFullScreen
           />
           <h1 className="text-lg text-gray-700 font-semibold mt-3">
             {result.title}
