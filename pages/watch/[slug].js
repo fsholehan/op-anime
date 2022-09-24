@@ -26,8 +26,6 @@ function Watch() {
     }
   }, [getData, query.slug, isReady]);
 
-  console.log(result);
-
   return (
     <>
       <Head>

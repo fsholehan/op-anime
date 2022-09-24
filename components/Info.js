@@ -1,11 +1,14 @@
+import Link from "next/link";
 import { useEffect, useState, useCallback } from "react";
-import { getListEps } from "../fetch";
+import { getListEps, getWatch } from "../fetch";
 import InfoBottom from "./InfoBottom";
 import InfoTop from "./InfoTop";
 
 function Info() {
   const [result, setResult] = useState({});
   const [loading, setLoading] = useState(false);
+  const [lastWatch, setLastWatch] = useState("");
+  const [lastView, setLastView] = useState({});
 
   const getResult = useCallback(async () => {
     setLoading(true);
@@ -14,9 +17,26 @@ function Info() {
     setLoading(false);
   }, []);
 
+  const getData = useCallback(async (slug) => {
+    setLoading(true);
+    const data = await getWatch(slug);
+    setLastView(data);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    const watch = window.localStorage.getItem("last-watch");
+
+    setLastWatch(watch);
+  }, []);
+
   useEffect(() => {
     getResult();
   }, [getResult]);
+
+  useEffect(() => {
+    if (lastWatch !== "" && lastWatch !== null) getData(lastWatch);
+  }, [getData, lastWatch]);
 
   return (
     <div>
@@ -26,6 +46,16 @@ function Info() {
         desc={result.description}
         img={result.imgUrl}
       />
+      {Object.keys(lastView).length !== 0 && (
+        <div className="mt-10">
+          <Link href={`/watch/${lastWatch}`}>
+            <a className="block w-full rounded-full py-2 text-center border border-blue-500 text-xs">
+              Terakhir ditonton {lastView.title}
+            </a>
+          </Link>
+        </div>
+      )}
+
       <InfoBottom listEps={result.episodes} />
     </div>
   );
