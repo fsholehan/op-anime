@@ -37,33 +37,42 @@ function Watch() {
         <Link href="/">
           <a className="mb-4 block">Beranda</a>
         </Link>
-        {loading && <h1>Loading....</h1>}
-        <div>
-          <Iframe
-            url={result.video_uri}
-            height="300px"
-            id="myId"
-            className="w-full"
-            display="initial"
-            position="relative"
-            allowFullScreen
-          />
-          <h1 className="text-lg text-gray-700 font-semibold mt-3">
-            {result.title}
-          </h1>
-          <div className="mt-5 flex items-center justify-between">
-            <Button
-              backgroundColor="bg-gray-700"
-              text="Previous"
-              href={`/watch/${result.prev_eps}`}
+        {loading ? (
+          <h1>Loading....</h1>
+        ) : (
+          <div>
+            <Iframe
+              url={result.video_uri}
+              height="300px"
+              id="myId"
+              className="w-full"
+              display="initial"
+              position="relative"
+              allowFullScreen
             />
-            <Button
-              backgroundColor="bg-blue-500"
-              text="Next"
-              href={`/watch/${result.next_eps}`}
-            />
+            <h1 className="text-lg text-gray-700 font-semibold mt-3">
+              {result.title}
+            </h1>
+            <h2 className="font-light text-xs">{result.released}</h2>
+            <div className="mt-5 flex items-center justify-between">
+              <Button
+                backgroundColor="bg-gray-700"
+                text="Previous"
+                href={`/watch/${result.prev_eps}`}
+              />
+              <Button
+                backgroundColor="bg-blue-500"
+                text="Next"
+                href={`/watch/${result.next_eps}`}
+              />
+            </div>
+            <div className="mt-5">
+              <span className="font-semibold text-gray-700 text-sm">
+                * Jika blank refresh
+              </span>
+            </div>
           </div>
-        </div>
+        )}
       </Section>
     </>
   );
