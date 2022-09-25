@@ -47,7 +47,9 @@ function Watch() {
   }, []);
 
   useEffect(() => {
-    sv.filter((s) => setIsSaved(s.slug === query.slug));
+    if (sv !== null) {
+      sv.filter((s) => setIsSaved(s.slug === query.slug));
+    }
   }, [query.slug, sv]);
 
   return (
