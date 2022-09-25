@@ -9,7 +9,7 @@ import Link from "next/link";
 import { BookmarkIcon } from "@heroicons/react/24/outline";
 import { addToLocalStorage } from "../../helpers/addToLocalStorage";
 
-function Watch() {
+function Slug() {
   const { query, isReady } = useRouter();
   const [result, setResult] = useState({});
   const [loading, setLoading] = useState(false);
@@ -127,4 +127,4 @@ function Watch() {
   );
 }
 
-export default Watch;
+export default Slug;
