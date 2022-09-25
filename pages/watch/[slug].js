@@ -37,7 +37,7 @@ function Watch() {
       timestamp: new Date().getTime(),
       slug: query.slug,
     });
-    Router.reload(window.location.pathname);
+    setIsSaved(true);
   };
 
   useEffect(() => {
