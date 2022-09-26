@@ -8,6 +8,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { BookmarkIcon } from "@heroicons/react/24/outline";
 import { addToLocalStorage } from "../../helpers/addToLocalStorage";
+import Header from "../../components/Header";
 
 function Slug() {
   const { query, isReady } = useRouter();
@@ -60,9 +61,7 @@ function Slug() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Section>
-        <Link href="/">
-          <a className="mb-4 block">Beranda</a>
-        </Link>
+        <Header />
         {loading ? (
           <h1>Loading....</h1>
         ) : (
