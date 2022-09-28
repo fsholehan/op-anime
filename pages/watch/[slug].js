@@ -1,11 +1,10 @@
 import Section from "../../components/Section";
 import { useCallback, useEffect, useState } from "react";
 import { getWatch } from "../../fetch";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Iframe from "react-iframe";
 import Button from "../../components/Button";
 import Head from "next/head";
-import Link from "next/link";
 import { BookmarkIcon } from "@heroicons/react/24/outline";
 import { addToLocalStorage } from "../../helpers/addToLocalStorage";
 import Header from "../../components/Header";

@@ -39,7 +39,7 @@ function Info() {
   }, [getData, lastWatch]);
 
   return (
-    <div>
+    <>
       {loading && <h1>Loading.....</h1>}
       <InfoTop
         title={result.title}
@@ -57,7 +57,7 @@ function Info() {
       )}
 
       <InfoBottom listEps={result.episodes} />
-    </div>
+    </>
   );
 }
 
