@@ -73,6 +73,8 @@ function Slug() {
               display="initial"
               position="relative"
               allowFullScreen
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder={0}
             />
             <div className="flex justify-between items-center">
               <div>
