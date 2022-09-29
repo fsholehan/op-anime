@@ -15,6 +15,15 @@ function AboutMe() {
         <h1 className="text-3xl font-medium text-gray-700">Siapa saya?!</h1>
       </div>
       <div className="mt-10">
+        <h1>API</h1>
+        <a
+          className="text-blue-500 font-medium"
+          href="https://op-api-fns.herokuapp.com/"
+        >
+          https://op-api-fns.herokuapp.com/
+        </a>
+      </div>
+      <div className="mt-10">
         <h1 className="text-xl font-semibold text-gray-700">Sosmed</h1>
         <div className="mt-3 flex items-center space-x-3">
           <SocialIcon url="https://twitter.com/sholehanfuad" />
