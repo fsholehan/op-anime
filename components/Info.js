@@ -55,7 +55,12 @@ function Info() {
           <Link href={`/watch/${lastWatch.url}`}>
             <a className="block w-full rounded-full py-2 text-center border border-blue-500 text-xs">
               Terakhir ditonton {lastView.title} <br />
-              {moment(lastWatch.timestamp).format("LLL")}
+              <b>
+                {" "}
+                {moment(lastWatch.timestamp).format(
+                  "dddd, MMMM Do YYYY, h:mm:ss a"
+                )}
+              </b>
             </a>
           </Link>
         </div>

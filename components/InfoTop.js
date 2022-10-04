@@ -4,6 +4,7 @@ function InfoTop({ img, desc, title }) {
   return (
     <div className="flex flex-col justify-center items-center space-y-3">
       <Image
+        priority
         height={325}
         width={200}
         className="object-cover rounded-lg"
