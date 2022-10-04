@@ -26,7 +26,13 @@ function Slug() {
   useEffect(() => {
     if (isReady) {
       getData(query.slug);
-      localStorage.setItem("last-watch", query.slug);
+      localStorage.setItem(
+        "last-watch",
+        JSON.stringify({
+          url: query.slug,
+          timestamp: new Date().getTime(),
+        })
+      );
     }
   }, [getData, query.slug, isReady]);
 

@@ -3,11 +3,12 @@ import { useEffect, useState, useCallback } from "react";
 import { getListEps, getWatch } from "../fetch";
 import InfoBottom from "./InfoBottom";
 import InfoTop from "./InfoTop";
+import moment from "moment";
 
 function Info() {
   const [result, setResult] = useState({});
   const [loading, setLoading] = useState(false);
-  const [lastWatch, setLastWatch] = useState("");
+  const [lastWatch, setLastWatch] = useState({});
   const [lastView, setLastView] = useState({});
 
   const getResult = useCallback(async () => {
@@ -27,7 +28,7 @@ function Info() {
   useEffect(() => {
     const watch = window.localStorage.getItem("last-watch");
 
-    setLastWatch(watch);
+    setLastWatch(JSON.parse(watch));
   }, []);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ function Info() {
   }, [getResult]);
 
   useEffect(() => {
-    if (lastWatch !== "" && lastWatch !== null) getData(lastWatch);
+    if (Object.keys(lastWatch).length !== 0) getData(lastWatch.url);
   }, [getData, lastWatch]);
 
   return (
@@ -48,9 +49,10 @@ function Info() {
       />
       {Object.keys(lastView).length !== 0 && (
         <div className="mt-10">
-          <Link href={`/watch/${lastWatch}`}>
+          <Link href={`/watch/${lastWatch.url}`}>
             <a className="block w-full rounded-full py-2 text-center border border-blue-500 text-xs">
-              Terakhir ditonton {lastView.title}
+              Terakhir ditonton {lastView.title} <br />
+              {moment(lastWatch.timestamp).format("LLL")}
             </a>
           </Link>
         </div>
