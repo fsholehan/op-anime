@@ -36,8 +36,11 @@ function Info() {
   }, [getResult]);
 
   useEffect(() => {
-    if (lastWatch !== null && lastWatch !== undefined) getData(lastWatch.url);
+    if (lastWatch !== null && lastWatch.url !== undefined)
+      getData(lastWatch.url);
   }, [getData, lastWatch]);
+
+  console.log();
 
   return (
     <>
