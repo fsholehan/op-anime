@@ -23,6 +23,7 @@ function Slug() {
     setLoading(false);
   }, []);
 
+  //last watch
   useEffect(() => {
     if (isReady) {
       getData(query.slug);

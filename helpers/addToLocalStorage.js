@@ -1,4 +1,4 @@
-export const addToLocalStorage = (name, dataItem, check = false) => {
+export const addToLocalStorage = (name, dataItem, slice = false) => {
   const data = window.localStorage.getItem(name);
 
   if (data === null) {
@@ -6,7 +6,7 @@ export const addToLocalStorage = (name, dataItem, check = false) => {
   } else {
     const getCurrentData = window.localStorage.getItem(name);
     const currentData = JSON.parse(getCurrentData);
-    if (check) {
+    if (slice) {
       if (currentData.includes(dataItem)) return;
 
       if (currentData.length > 20) {
