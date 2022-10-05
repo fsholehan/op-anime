@@ -7,7 +7,7 @@ function InfoTop({ img, desc, title }) {
         priority
         height={250}
         width={187}
-        className="object-contain rounded-lg max-w-full max-h-full"
+        className="object-contain rounded-lg"
         src={img}
         alt=""
       />
