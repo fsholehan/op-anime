@@ -56,7 +56,6 @@ function Info() {
             <a className="block w-full rounded-full py-2 text-center border border-blue-500 text-xs">
               Terakhir ditonton {lastView.title} <br />
               <b>
-                {" "}
                 {moment(lastWatch.timestamp).format(
                   "dddd, MMMM Do YYYY, h:mm:ss a"
                 )}

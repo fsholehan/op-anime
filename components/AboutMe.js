@@ -12,7 +12,7 @@ function AboutMe() {
           width={150}
           src="https://github.com/fsholehan/op-anime/blob/main/public/images/20220927_074343.jpg?raw=true"
         />
-        <h1 className="text-3xl font-medium text-gray-700">Siapa saya?!</h1>
+        <h1 className="text-xl font-medium text-gray-700">Siapa saya?!</h1>
       </div>
       <div className="mt-10">
         <h1>API</h1>
