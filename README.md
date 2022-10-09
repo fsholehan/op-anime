@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## API
 
-You can use [https://op-api-fns.herokuapp.com/api/all](https://op-api-fns.herokuapp.com/api/all)
+You can use [https://op-api-fns.herokuapp.com](https://op-api-fns.herokuapp.com)
 
 ## Create .env file
 
