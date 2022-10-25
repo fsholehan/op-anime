@@ -24,7 +24,7 @@ function AboutMe() {
         </a>
       </div>
       <div className="mt-10">
-        <h1 className="text-sm font-semibold text-gray-700">Sosmed</h1>
+        <h1 className="text-sm font-semibold text-gray-700">Sosial media</h1>
         <div className="mt-3 flex items-center space-x-3">
           <SocialIcon url="https://twitter.com/sholehanfuad" />
           <SocialIcon url="https://instagram.com/fuadnursholehan" />
