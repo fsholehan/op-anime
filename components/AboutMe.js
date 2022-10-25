@@ -15,7 +15,7 @@ function AboutMe() {
         <h1 className="text-sm font-medium text-gray-700">Siapa saya?!</h1>
       </div>
       <div className="mt-10">
-        <h1>API</h1>
+        <h1 className="text-gray-900 text-sm">API</h1>
         <a
           className="text-blue-500 font-medium"
           href="https://op-api-fns.herokuapp.com/"
