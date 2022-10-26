@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import Episode from "./Episode";
 
-function ListEpisode({ episodes, isReverse }) {
+function ListEpisode({ episodes, isReverse, filterEps }) {
+  useEffect(() => {
+    if (filterEps !== "") {
+      episodes.filter((neps) => (neps.eps = filterEps));
+    }
+  }, [episodes, filterEps]);
+
   return (
     <div className="mt-6 flex flex-col space-y-2 divide-y">
       {isReverse
