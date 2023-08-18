@@ -10,6 +10,7 @@ function Info() {
   const [loading, setLoading] = useState(false);
   const [lastWatch, setLastWatch] = useState({});
   const [lastView, setLastView] = useState({});
+  const [loadingData, setLoadingData] = useState(false);
 
   const getResult = useCallback(async () => {
     setLoading(true);
@@ -19,10 +20,10 @@ function Info() {
   }, []);
 
   const getData = useCallback(async (slug) => {
-    setLoading(true);
+    setLoadingData(true);
     const data = await getWatch(slug);
     setLastView(data);
-    setLoading(false);
+    setLoadingData(false);
   }, []);
 
   useEffect(() => {
@@ -39,9 +40,6 @@ function Info() {
     if (lastWatch !== null && lastWatch.url !== undefined)
       getData(lastWatch.url);
   }, [getData, lastWatch]);
-
-  console.log();
-
   return (
     <>
       {loading && <h1>Loading.....</h1>}
@@ -65,7 +63,7 @@ function Info() {
         </div>
       )}
 
-      <InfoBottom listEps={result.episodes} />
+      <InfoBottom listEps={result.episodes} loading={loading} />
     </>
   );
 }
