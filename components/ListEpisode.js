@@ -1,37 +1,29 @@
-import { useEffect } from "react";
 import Episode from "./Episode";
 
-function ListEpisode({ episodes, isReverse, filterEps }) {
-  useEffect(() => {
-    if (filterEps !== "") {
-      episodes.filter((neps) => (neps.eps = filterEps));
-    }
-  }, [episodes, filterEps]);
+function ListEpisode({ episodes, searchEps, reverse }) {
+  function renderEpisode(eps, i) {
+    return (
+      <Episode
+        key={i}
+        eps={eps.eps}
+        date={eps.date}
+        title={eps.title}
+        slug={eps.slug}
+      />
+    );
+  }
+
+  const filteredEpisodes =
+    searchEps !== ""
+      ? episodes?.filter((eps) => eps.eps.includes(searchEps))
+      : episodes;
 
   return (
-    <div className="mt-6 flex flex-col space-y-2 divide-y">
-      {isReverse
-        ? episodes
-            .map((eps, i) => (
-              <Episode
-                key={i}
-                eps={eps.eps}
-                date={eps.date}
-                title={eps.title}
-                slug={eps.slug}
-              />
-            ))
-            .reverse()
-        : episodes?.map((eps, i) => (
-            <Episode
-              key={i}
-              eps={eps.eps}
-              date={eps.date}
-              title={eps.title}
-              slug={eps.slug}
-            />
-          ))}
-    </div>
+    <>
+      {reverse
+        ? filteredEpisodes?.map(renderEpisode).reverse()
+        : filteredEpisodes?.map(renderEpisode)}
+    </>
   );
 }
 

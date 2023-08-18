@@ -53,7 +53,7 @@ function Info() {
       {Object.keys(lastView).length !== 0 && (
         <div className="mt-10">
           <Link href={`/watch/${lastWatch.url}`}>
-            <a className="block w-full rounded-full py-2 text-center border border-blue-500 text-xs">
+            <a className="block w-full rounded-full py-2 text-center bg-blue-500 text-white text-xs">
               Terakhir ditonton {lastView.title} <br />
               <b>
                 {moment(lastWatch.timestamp).format(

@@ -30,7 +30,7 @@ function InfoBottom({ listEps }) {
         </div>
       </div>
 
-      <ListEpisode episodes={listEps} isReverse={reverse} filterEps={eps} />
+      <ListEpisode episodes={listEps} isReverse={reverse} searchEps={eps} />
     </div>
   );
 }
