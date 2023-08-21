@@ -18,9 +18,9 @@ function AboutMe() {
         <h1 className="text-gray-900 text-sm">API</h1>
         <a
           className="text-blue-500 font-medium"
-          href="https://op-api-fns.herokuapp.com/"
+          href="https://different-sweatpants-pig.cyclic.cloud"
         >
-          https://op-api-fns.herokuapp.com/
+          https://different-sweatpants-pig.cyclic.cloud
         </a>
       </div>
       <div className="mt-10">
@@ -28,7 +28,6 @@ function AboutMe() {
         <div className="mt-3 flex items-center space-x-3">
           <SocialIcon url="https://twitter.com/sholehanfuad" />
           <SocialIcon url="https://instagram.com/fuadnursholehan" />
-          <SocialIcon url="https://t.me/fuadnur25" />
         </div>
       </div>
     </div>
